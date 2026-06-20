@@ -1,0 +1,8 @@
+title: Nail In The Head — Blog
+description: Plain-English guides on using AI for real life. No jargon, no hype.
+url: "https://blog.nailinthehead.org"
+baseurl: ""
+permalink: /:title/
+markdown: kramdown
+exclude:
+  - README.md

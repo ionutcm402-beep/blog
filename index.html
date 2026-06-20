@@ -1,0 +1,38 @@
+---
+layout: default
+title: Blog
+description: Plain-English guides on using AI for real life. No jargon, no hype.
+---
+
+<div class="blog-head">
+  <div class="eyebrow">The Blog</div>
+  <h1>Make AI <em>actually useful</em>.</h1>
+  <p class="lead">Plain-English guides on using AI for real things — job hunting, money, presentations, and more. No jargon, no hype.</p>
+</div>
+
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li>
+    <a href="{{ post.url }}">
+      <span class="pl-date">{{ post.date | date: "%-d %b %Y" }}</span>
+      <span class="pl-title">{{ post.title }}</span>
+      {% if post.excerpt_text %}<span class="pl-ex">{{ post.excerpt_text }}</span>{% endif %}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+<style>
+  .blog-head{margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid var(--line);}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:16px;}
+  .blog-head h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(2.2rem,6vw,3.4rem);line-height:1.08;letter-spacing:-0.01em;margin-bottom:14px;}
+  .blog-head h1 em{color:var(--gold);font-style:italic;}
+  .blog-head .lead{color:var(--smoke);font-size:1.1rem;max-width:560px;}
+  .post-list{list-style:none;}
+  .post-list li{border-bottom:1px solid var(--line);}
+  .post-list a{display:block;padding:26px 0;color:var(--bone);}
+  .post-list a:hover .pl-title{color:var(--gold);}
+  .pl-date{display:block;font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ash);margin-bottom:8px;}
+  .pl-title{display:block;font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;line-height:1.25;margin-bottom:8px;transition:color .2s ease;}
+  .pl-ex{display:block;color:var(--smoke);font-size:0.98rem;}
+</style>
